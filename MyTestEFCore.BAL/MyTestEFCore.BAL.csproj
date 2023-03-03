@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyTestEFCore.DAL\MyTestEFCore.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

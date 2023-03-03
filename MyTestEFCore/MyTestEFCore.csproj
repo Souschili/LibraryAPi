@@ -15,4 +15,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyTestEFCore.BAL\MyTestEFCore.BAL.csproj" />
+  </ItemGroup>
+
 </Project>
