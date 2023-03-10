@@ -2,7 +2,7 @@
 
 namespace MyTestEFCore.DAL.Entitys
 {
-    internal class Book
+    public class Book
     {
         [Key]
         public int Id { get; set; }

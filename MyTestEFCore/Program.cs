@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using MyTestEFCore.DAL.Context;
+using System.Reflection;
+
 namespace MyTestEFCore
 {
     public class Program
@@ -6,7 +10,10 @@ namespace MyTestEFCore
         {
             var builder = WebApplication.CreateBuilder(args);
 
-           
+
+            builder.Services.AddDbContext<ApplicationDbContext>(
+                cfg => cfg.UseSqlServer("name=Defaults",
+                opt=> opt.MigrationsAssembly("MyTestEFCore.DAL")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
