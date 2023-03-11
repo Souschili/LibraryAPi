@@ -15,14 +15,14 @@ namespace MyTestEFCore.DAL.Repository.Repositories
             _DbSet = _Context.Set<T>();
         }
 
-        public Task Add(T entity)
+        public async Task Add(T entity)
         {
-            throw new NotImplementedException();
+            await _DbSet.AddAsync(entity);
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+           await _DbSet.ToListAsync();
         }
 
         public IEnumerable<T> GetById(int id)
