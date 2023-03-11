@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyTestEFCore.DAL.Context;
+using MyTestEFCore.DAL.UnitOfWork;
 using System.Reflection;
 
 namespace MyTestEFCore
@@ -12,8 +13,9 @@ namespace MyTestEFCore
 
 
             builder.Services.AddDbContext<ApplicationDbContext>(
-                cfg => cfg.UseSqlServer("name=Defaults",
+                cfg => cfg.UseSqlServer("name=Default",
                 opt=> opt.MigrationsAssembly("MyTestEFCore.DAL")));
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,6 +1,6 @@
 ﻿namespace MyTestEFCore.DAL.Repository.IRepositories
 {
-    internal interface IGenericRepository<T>
+    public interface IGenericRepository<T>
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T?> GetById(int id);

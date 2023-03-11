@@ -2,7 +2,7 @@
 
 namespace MyTestEFCore.DAL.Repository.IRepositories
 {
-    internal interface IAuthorRepository:IGenericRepository<Author>
+    public interface IAuthorRepository:IGenericRepository<Author>
     {
     }
 }

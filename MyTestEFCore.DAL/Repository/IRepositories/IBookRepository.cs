@@ -2,7 +2,7 @@
 
 namespace MyTestEFCore.DAL.Repository.IRepositories
 {
-    internal interface IBookRepository:IGenericRepository<Book>
+    public interface IBookRepository:IGenericRepository<Book>
     {
     }
 }
