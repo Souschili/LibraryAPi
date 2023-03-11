@@ -2,10 +2,10 @@
 {
     internal interface IGenericRepository<T>
     {
-        IEnumerable<T> GetAllAsync();
-        IEnumerable<T> GetById(int id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T?> GetById(int id);
         Task Add(T entity);
-        Task Update(T entity);
+        void Update(T entity);
 
     }
 }

@@ -6,13 +6,13 @@ namespace MyTestEFCore.DAL.Repository.Repositories
 {
     internal class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected ApplicationDbContext _Context;
+        
         protected DbSet<T> _DbSet;
 
         public GenericRepository(ApplicationDbContext context)
         {
-            _Context = context;
-            _DbSet = _Context.Set<T>();
+            
+            _DbSet = context.Set<T>();
         }
 
         public async Task Add(T entity)
@@ -22,17 +22,19 @@ namespace MyTestEFCore.DAL.Repository.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-           await _DbSet.ToListAsync();
+           return await _DbSet.ToListAsync();
         }
 
-        public IEnumerable<T> GetById(int id)
+        public async Task<T?> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _DbSet.FindAsync(id);
         }
 
-        public Task Update(T entity)
+        public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _DbSet.Update(entity);
         }
+
+      
     }
 }
