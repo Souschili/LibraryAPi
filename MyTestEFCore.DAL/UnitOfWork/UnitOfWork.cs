@@ -18,9 +18,19 @@ namespace MyTestEFCore.DAL.UnitOfWork
             Books = new BookRepository(context);
         }
 
-        public Task CompleteAsync()
+        public async Task CompleteAsync()
         {
-            throw new NotImplementedException();
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task DisposeAsync()
+        {
+            await _dbContext.DisposeAsync();
+        }
+
+        public void Dispose()
+        {
+            _dbContext.Dispose();
         }
     }
 }

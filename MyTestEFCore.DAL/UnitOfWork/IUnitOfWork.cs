@@ -8,5 +8,8 @@ namespace MyTestEFCore.DAL.UnitOfWork
         IBookRepository Books { get; }
 
         Task CompleteAsync();
+        Task DisposeAsync();
+        void Dispose();
+
     }
 }
