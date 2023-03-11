@@ -1,4 +1,4 @@
-﻿namespace MyTestEFCore.DAL.Repository
+﻿namespace MyTestEFCore.DAL.Repository.IRepositories
 {
     internal interface IGenericRepository<T>
     {
