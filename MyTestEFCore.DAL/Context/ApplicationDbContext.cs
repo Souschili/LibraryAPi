@@ -12,7 +12,8 @@ namespace MyTestEFCore.DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            // Author
+            modelBuilder.
         }
     }
 }
