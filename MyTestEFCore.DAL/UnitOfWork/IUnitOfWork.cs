@@ -6,6 +6,7 @@ namespace MyTestEFCore.DAL.UnitOfWork
     {
         IAuthorRepository Authors { get; }
         IBookRepository Books { get; }
+        IAuthorInfoRepository AuthorInfo { get; }
 
         Task CompleteAsync();
         Task DisposeAsync();

@@ -11,11 +11,14 @@ namespace MyTestEFCore.DAL.UnitOfWork
 
         public IBookRepository Books { get; }
 
+        public IAuthorInfoRepository AuthorInfo { get; }
+
         public UnitOfWork(ApplicationDbContext context)
         {
             _dbContext = context;
             Authors = new AuthorRepository(context);
             Books = new BookRepository(context);
+            AuthorInfo = new AuthorInfoRepository(context);
         }
 
         public async Task CompleteAsync()

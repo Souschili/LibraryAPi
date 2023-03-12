@@ -2,17 +2,17 @@
 
 namespace MyTestEFCore.DAL.Entitys
 {
-    public class Book
+    public class Book:BaseModel
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         [StringLength(250)]
         public string? BookName { get; set; }
 
         [Required]
         public int Pages { get; set; }
+
+        public string AuthorName { get; set; }
+        public Author? Author { get; set; }
 
     }
 }

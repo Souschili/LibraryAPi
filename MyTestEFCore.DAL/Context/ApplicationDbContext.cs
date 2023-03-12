@@ -12,8 +12,20 @@ namespace MyTestEFCore.DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // TODO:add con
-            //modelBuilder.ApplyConfiguration();
+            modelBuilder.Entity<Book>()
+                .HasOne(a => a.Author)
+                .WithMany(c => c.Books)
+                .HasForeignKey(a => a.AuthorName)
+                .HasPrincipalKey(c => c.FullName);
+
+
+            modelBuilder.Entity<AuthorInfo>()
+            .HasOne(a => a.Author)
+            .WithOne(i => i.AuthorInfo)
+            .HasForeignKey<AuthorInfo>(i => i.AuthorName)
+            .HasPrincipalKey<Author>(a => a.FullName);
+                
+                
            
         }
     }

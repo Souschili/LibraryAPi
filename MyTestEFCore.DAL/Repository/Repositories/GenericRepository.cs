@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyTestEFCore.DAL.Context;
+using MyTestEFCore.DAL.Entitys;
 using MyTestEFCore.DAL.Repository.IRepositories;
 
 namespace MyTestEFCore.DAL.Repository.Repositories
 {
-    internal class GenericRepository<T> : IGenericRepository<T> where T : class
+    internal class GenericRepository<T> : IGenericRepository<T> where T : BaseModel
     {
         
         protected DbSet<T> _DbSet;
